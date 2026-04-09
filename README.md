@@ -57,3 +57,19 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+Decorator exercise:
+
+1. Create a parent component with different bank accounts
+2. When selecting a card it should open up the child component with all account details
+3. Hard code timed changes to the balance to mimic account balance changes
+4. The balance should be formatted with "R 10 500.00"
+5. he title of the bank account should not be parsed through to the child component via @input
+6. Create all components yourself no cli generation
+7. Parent component should reference html & css files
+8. Child components should have the html & css templates within the component.
+9. @Component
+   @Directive
+   @Attribute
+   @Input
+   @Output
