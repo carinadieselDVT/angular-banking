@@ -2,8 +2,7 @@
 <ng-container *ngFor="let account of accounts">
   <ng-container>
     <div>{{ account.account_name }}</div>
-    <!-- TODO: Use pipe to format -->
-    <div>R{{ account.balance }}</div>
+    <div>{{ account.balance | balance }}</div>
     <!-- TODO: Open account details from button click -->
     <button>View account details</button>
   </ng-container>

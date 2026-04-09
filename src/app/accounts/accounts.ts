@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import bankdata from '../mockData.json';
-import { NgForOf } from '../../../node_modules/@angular/common/types/_common_module-chunk';
+import { BalancePipe } from '../balance-pipe';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-accounts',
-  imports: [NgForOf],
+  imports: [NgFor, BalancePipe],
   templateUrl: './accounts.html',
   styleUrl: './accounts.css',
 })
