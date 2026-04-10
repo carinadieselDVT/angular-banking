@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import bankdata from '../mockData.json';
 import { BalancePipe } from '../balance-pipe';
-import { NgFor, NgIf } from '@angular/common';
 import { Account } from './accounts.model';
 import { DetailsComponent } from '../details/details';
 import { RotateBalanceDirective } from '../shared/directives/rotateBalanance.directive';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatRadioModule } from '@angular/material/radio';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-accounts',
@@ -18,6 +19,8 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
     MatProgressSpinnerModule,
     MatRadioModule,
     ReactiveFormsModule,
+    MatCardModule,
+    MatButtonModule,
   ],
   templateUrl: './accounts.html',
   styleUrl: './accounts.css',
