@@ -73,3 +73,11 @@ Decorator exercise:
    @Attribute
    @Input
    @Output
+
+## Part 2
+
+- @for display bank accounts
+- @if display active bank accounts
+- @switch display different currencies
+- @defer mimic loading screen
+- @let use it with local variables

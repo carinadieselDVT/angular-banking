@@ -1,0 +1,57 @@
+[
+  {
+    "account_name": "Personal Savings",
+    "balance": 15234.75,
+    "status": "active",
+    "bank_details": {
+      "bank_name": "First National Bank",
+      "account_number": "62345678901",
+      "branch_code": "250655",
+      "account_type": "Savings"
+    }
+  },
+  {
+    "account_name": "Business Account",
+    "balance": 98250.0,
+    "status": "active",
+    "bank_details": {
+      "bank_name": "Standard Bank",
+      "account_number": "54839201765",
+      "branch_code": "051001",
+      "account_type": "Current"
+    }
+  },
+  {
+    "account_name": "Emergency Fund",
+    "balance": 30500.5,
+    "status": "active",
+    "bank_details": {
+      "bank_name": "ABSA",
+      "account_number": "78124563980",
+      "branch_code": "632005",
+      "account_type": "Savings"
+    }
+  },
+  {
+    "account_name": "Travel Fund",
+    "balance": 12500.0,
+    "status": "inactive",
+    "bank_details": {
+      "bank_name": "Nedbank",
+      "account_number": "90456321877",
+      "branch_code": "198765",
+      "account_type": "Savings"
+    }
+  },
+  {
+    "account_name": "Investment Account",
+    "balance": 450000.0,
+    "status": "active",
+    "bank_details": {
+      "bank_name": "Capitec Bank",
+      "account_number": "12398765432",
+      "branch_code": "470010",
+      "account_type": "Investment"
+    }
+  }
+]

@@ -1,4 +1,38 @@
-<h2>Welcome</h2>
-<!-- Accounts start here,name is not retrieved from  -->
-<div>Account name</div>
-<div>Account balance : R 10 500.00</div>
+<div class="accounts" [appRotateBalance]="accounts">
+  <div>
+    <h2>Welcome</h2>
+    <mat-radio-group aria-label="Select currency" [formControl]="selectedCurrency">
+      <mat-radio-button value="ZAR">ZAR</mat-radio-button>
+      <mat-radio-button value="USD">USD</mat-radio-button>
+      <mat-radio-button value="EUR">EUR</mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <div class="cards">
+    @for (
+      account of accounts.filter(a => a.status === 'active');
+      track account.bank_details.account_number
+    ) {
+      <mat-card appearance="outlined">
+        <mat-card-header>
+          <mat-card-title>{{ account.account_name }}</mat-card-title>
+          <mat-card-subtitle>{{
+            account.balance | balance: selectedCurrency.value!
+          }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-actions align="end">
+          <button mat-button (click)="viewDetails(account)">View account details</button>
+        </mat-card-actions>
+      </mat-card>
+    }
+  </div>
+
+  @defer {
+    @if (selectedAccount && selectedAccount.status === 'active') {
+      @let account = selectedAccount;
+
+      <app-details [account]="account" (closed)="selectedAccount = null"></app-details>
+    }
+  } @placeholder {
+    <mat-spinner></mat-spinner>
+  }
+</div>
