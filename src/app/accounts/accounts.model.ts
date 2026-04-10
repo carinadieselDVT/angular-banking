@@ -1,3 +1,5 @@
+export type AccountStatus = 'active' | 'inactive';
+
 export interface BankDetails {
   bank_name: string;
   account_number: string;
@@ -5,8 +7,9 @@ export interface BankDetails {
   account_type: string;
 }
 
-export interface Account {
+export interface BankAccount {
   account_name: string;
   balance: number;
+  status: AccountStatus;
   bank_details: BankDetails;
 }

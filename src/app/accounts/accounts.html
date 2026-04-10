@@ -1,14 +1,16 @@
 <div [appRotateBalance]="accounts" class="accounts">
   <h2>Welcome</h2>
 
-  <ng-container *ngFor="let account of accounts">
+  <!-- <ng-container *ngFor="let account of accounts"> -->
+  @for (account of accounts; track account.bank_details.account_number) {
     <div class="account-card">
       <div>{{ account.account_name }}</div>
       <div>{{ account.balance | balance }}</div>
 
       <button (click)="viewDetails(account)">View account details</button>
     </div>
-  </ng-container>
+  }
+  <!-- </ng-container> -->
 
   <app-details
     *ngIf="selectedAccount"
