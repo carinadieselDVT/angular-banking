@@ -1,8 +1,8 @@
-<div [appRotateBalance]="accounts">
+<div [appRotateBalance]="accounts" class="accounts">
   <h2>Welcome</h2>
 
   <ng-container *ngFor="let account of accounts">
-    <div>
+    <div class="account-card">
       <div>{{ account.account_name }}</div>
       <div>{{ account.balance | balance }}</div>
 
@@ -10,5 +10,10 @@
     </div>
   </ng-container>
 
-  <app-details *ngIf="selectedAccount" [account]="selectedAccount"> </app-details>
+  <app-details
+    *ngIf="selectedAccount"
+    [account]="selectedAccount"
+    (closed)="selectedAccount = null"
+  >
+  </app-details>
 </div>

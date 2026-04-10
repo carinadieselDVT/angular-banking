@@ -1,5 +1,5 @@
 import { NgIf } from '@angular/common';
-import { Attribute, Component, Input } from '@angular/core';
+import { Attribute, Component, EventEmitter, Input, Output } from '@angular/core';
 import { Account } from '../accounts/accounts.model';
 
 @Component({
@@ -14,6 +14,7 @@ import { Account } from '../accounts/accounts.model';
       <p>Account #: {{ account.bank_details.account_number }}</p>
       <p>Branch: {{ account.bank_details.branch_code }}</p>
       <p>Type: {{ account.bank_details.account_type }}</p>
+      <button type="button" (click)="closeDetails()">Close</button>
     </div>
   `,
   styles: [],
@@ -23,4 +24,10 @@ export class DetailsComponent {
   @Input() account!: Account;
   //   Retrieves the HTML attribute value directly from the component's host element.
   constructor(@Attribute('account-name') public accountName: string) {}
+
+  @Output() closed = new EventEmitter<void>();
+
+  closeDetails() {
+    this.closed.emit();
+  }
 }

@@ -21,7 +21,7 @@ export class RotateBalanceDirective implements OnInit, OnDestroy {
       this.accounts[this.index].balance += 10;
 
       console.log(
-        'Updated:',
+        'Updated account :',
         this.accounts[this.index].account_name,
         this.accounts[this.index].balance,
       );
@@ -29,7 +29,7 @@ export class RotateBalanceDirective implements OnInit, OnDestroy {
       this.changeDetector.detectChanges();
 
       this.index = (this.index + 1) % this.accounts.length;
-    }, 30000);
+    }, 10000);
   }
 
   ngOnDestroy() {
@@ -37,6 +37,11 @@ export class RotateBalanceDirective implements OnInit, OnDestroy {
   }
 }
 
+// ChangeDetectorRef notes
+// From docs
+// Base class that provides change detection functionality. A change-detection tree collects all views that are to be checked for changes. Use the methods to add and remove views from the tree, initiate change-detection, and explicitly mark views as dirty, meaning that they have changed and need to be re-rendered.
+
+// AI Summary
 // Why it’s needed:
 // Your setInterval updates data in a way Angular might not automatically detect, so the UI wouldn’t refresh on its own.
 
