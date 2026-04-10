@@ -5,10 +5,20 @@ import { NgFor, NgIf } from '@angular/common';
 import { Account } from './accounts.model';
 import { DetailsComponent } from '../details/details';
 import { RotateBalanceDirective } from '../shared/directives/rotateBalanance.directive';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatRadioModule } from '@angular/material/radio';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-accounts',
-  imports: [NgIf, NgFor, DetailsComponent, BalancePipe, RotateBalanceDirective],
+  imports: [
+    DetailsComponent,
+    BalancePipe,
+    RotateBalanceDirective,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    ReactiveFormsModule,
+  ],
   templateUrl: './accounts.html',
   styleUrl: './accounts.css',
 })
@@ -20,6 +30,8 @@ export class Accounts {
   }));
 
   selectedAccount: Account | null = null;
+
+  selectedCurrency = new FormControl<'ZAR' | 'USD' | 'EUR'>('ZAR');
 
   viewDetails(account: Account) {
     this.selectedAccount = account;
